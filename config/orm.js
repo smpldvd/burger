@@ -52,7 +52,7 @@ const orm = {
         })
     },
     updateOne: function(table, objColVals, condition, cb) {
-        let queryString = "UPDATE" + table;
+        let queryString = "UPDATE " + table;
 
         queryString += " SET ";
         queryString += objToSQL(objColVals);

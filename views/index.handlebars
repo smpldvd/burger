@@ -1,0 +1,39 @@
+<header>
+<h1>Welcome to Good Burger!</h1>
+<h2>Home of the Good Burger, can I take your order?</h2>
+<hr>
+</header>
+<div class="row">
+    <div class="col text-left">
+        <table>
+            {{#each burgers}}
+            <td>
+                {{#unless devoured}}
+                {{> burgers/burger-block devoured=true}}
+                {{/unless}}
+            </td>
+            {{/each}}
+        </table>
+    </div>
+    <div class="col text-left">
+            {{#each burgers}}
+            <p>
+                {{#if devoured}}
+                {{id}}. {{burger_name}}
+                {{/if}}
+            </p>
+            {{/each}}
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col text-center">
+        <form class="create-form">
+            <div class="form-group">
+                <label for="burgName"></label>
+                <textarea type="text" id="burgName" name="name" placeholder="What kind of burga ya havin?"></textarea>
+            </div>
+            <button type="submit">Add Burga</button>
+        </form>
+    </div>
+</div>
